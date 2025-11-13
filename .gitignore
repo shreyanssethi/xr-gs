@@ -1,0 +1,22 @@
+# Data directories
+data/
+datasets/
+
+# Python
+__pycache__/
+*.pyc
+.vscode
+
+# Environments
+.env
+.venv
+*.swp
+
+# Model checkpoints
+*.pt
+*.pth
+
+# MacOS junk
+.DS_Store
+
+

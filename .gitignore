@@ -1,6 +1,7 @@
 # Data directories
 data/
 datasets/
+gsplat/
 
 # Python
 __pycache__/

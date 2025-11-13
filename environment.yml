@@ -1,0 +1,19 @@
+name: xrgs
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.2.1
+  - pytorch-cuda=12.1
+  - torchvision
+  - pip
+  - pip:
+      - gsplat
+      - opencv-python
+      - imageio
+      - scipy
+      - lpips
+      - tqdm
+      - matplotlib

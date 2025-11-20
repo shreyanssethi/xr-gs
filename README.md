@@ -5,7 +5,7 @@ This repository contains an extended version of Gaussian Splatting designed to h
 
 ---
 
-# 🔧 Environment Setup  
+## 🔧 Environment Setup  
 These commands have been **verified on an AWS Ubuntu instance with CUDA**.
 
 ```bash
@@ -24,7 +24,7 @@ export QT_QPA_PLATFORM=offscreen
 ```
 ---
 
-# 1. Pre-process Images to Simulate Mixed Resolution
+## 1. Pre-process Images to Simulate Mixed Resolution
 
 ```
 python scripts/preprocess_mixed_res.py --in_dir data/nerf_llff_data/fern/images --out_dir data/nerf_llff_data/fern_xrgs
@@ -33,7 +33,7 @@ python scripts/preprocess_mixed_res.py --in_dir data/nerf_llff_data/fern/images 
 - `in_dir` must point to a directory containing all desired images (Should all be the same resolution right now)
 - This will create an `/images` subdir and a `mixed_res_metadata.json` 
 
-# 2. Run COLMAP on mixed-resolution images
+## 2. Run COLMAP on mixed-resolution images
 
 ```
 python scripts/run_colmap.py --dataset_dir data/nerf_llff_data/fern_xrgs
@@ -42,7 +42,7 @@ python scripts/run_colmap.py --dataset_dir data/nerf_llff_data/fern_xrgs
 - This script runs the colmap feature extractor, exhaustive matcher and matcher
 - It will generate a `database.db` file and a `/sparse` subdir containing extrinsic/intrinsic information about the cameras, bins, etc.
 
-# 3. Run Gaussian Splatting with XR-GS Modifications
+## 3. Run Gaussian Splatting with XR-GS Modifications
 
 ```
 bash scripts/run_gs_simple_trainer.sh SCENE_NAME RUN_NAME

@@ -106,12 +106,14 @@ def main():
     )
 
     # save images
+    os.makedirs(os.path.join(args.out_dir, "images"), exist_ok=True)
+
     for fname, img in mixed_images:
-        out_path = os.path.join(args.out_dir, fname)
+        out_path = os.path.join(args.out_dir, "images/", fname)
         img.save(out_path)
 
     # save metadata JSON
-    metadata_path = os.path.join(args.out_dir, "metadata.json")
+    metadata_path = os.path.join(args.out_dir, "mixed_res_metadata.json")
     with open(metadata_path, "w") as f:
         json.dump(metadata, f, indent=4)
 

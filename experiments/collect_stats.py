@@ -40,12 +40,19 @@ def collect_stats(dataset_dir: str, out_csv: str):
         step7k = stats_dir / "val_step6999.json"
         step30k = stats_dir / "val_step29999.json"
 
+        # Training summary that includes mem + ellipse_time
+        train30k = stats_dir / "train_step29999_rank0.json"
+
         js7 = load_json(step7k)
         js30 = load_json(step30k)
+        js_train = load_json(train30k)
 
         if js7 is None or js30 is None:
-            print(f"Missing json files in {rdir.name}, skipping")
+            print(f"Missing val json files in {rdir.name}, skipping")
             continue
+
+        mem_30k = js_train.get("mem") if js_train else None
+        ellipse_30k = js_train.get("ellipse_time") if js_train else None
 
         row = {
             "name": rdir.name,
@@ -60,6 +67,9 @@ def collect_stats(dataset_dir: str, out_csv: str):
             "ssim_30k": js30.get("ssim"),
             "lpips_30k": js30.get("lpips"),
             "numGS_30k": js30.get("num_GS"),
+
+            "mem_30k": mem_30k,
+            "ellipse_30k": ellipse_30k,
         }
 
         rows.append(row)
@@ -79,6 +89,7 @@ def collect_stats(dataset_dir: str, out_csv: str):
                 "version",
                 "psnr_7k", "ssim_7k", "lpips_7k", "numGS_7k",
                 "psnr_30k", "ssim_30k", "lpips_30k", "numGS_30k",
+                "mem_30k", "ellipse_30k",
             ]
         )
         writer.writeheader()

@@ -45,12 +45,13 @@ python scripts/run_colmap.py --dataset_dir data/nerf_llff_data/fern_xrgs
 ## 3. Run Gaussian Splatting with XR-GS Modifications
 
 ```
-bash scripts/run_gs_simple_trainer.sh SCENE_NAME RUN_NAME
+bash scripts/run_gs_xrgs_trainer.sh SCENE_NAME RUN_NAME
 ```
 E.g.
 ```
-bash run_gs_simple_trainer.sh flower_xrgs NewDensifyAndPrune_v2
+bash scripts/run_gs_xrgs_trainer.sh flower_xrgs NewDensifyAndPrune_v5
 ```
 
 - This will create a `results_NewDensifyAndPrune_v2` in the data directory, where the checkpoints, rendered images, stats, and rendered videos will be saved
 - Note: This script is currently specific to the environment we ran on (Ubuntu AWS Instance) and you may need to change the data_dir prefix in the script for it to work for you
+- Alternatively, you can run `run_gs_default_trainer.sh` if you want to run the default Gaussian Splatting implementation for comparison

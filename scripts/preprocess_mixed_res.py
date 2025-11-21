@@ -86,7 +86,7 @@ def main():
                         help="Directory where processed images + metadata.json will be saved")
     parser.add_argument("--base_factor", type=float, default=5.0,
                         help="Base downsample factor for all images (default: 5)")
-    parser.add_argument("--highres_pct", type=float, default=0.3,
+    parser.add_argument("--highres_pct", type=float, default=0.2,
                         help="Percentage of images to keep at the base resolution (default: 0.3)")
     parser.add_argument("--extra_factor", type=float, default=2.0,
                         help="Extra downsample factor for low-resolution subset (default: 2)")

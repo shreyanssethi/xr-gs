@@ -3,6 +3,14 @@
 
 This repository contains an extended version of Gaussian Splatting designed to handle **mixed-resolution input views** using high-resolution anchors and low-resolution supplementary views.
 
+<p align="center">
+  <img src="assets/XRGS Poster Presentation.png" alt="XR-GS Poster" width="100%">
+</p>
+
+<p align="center">
+  <a href="assets/XRGS Poster Presentation.pdf">📄 Download full-resolution PDF</a>
+</p>
+
 ---
 
 ## 🔧 Environment Setup  
